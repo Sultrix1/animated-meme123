@@ -130,7 +130,7 @@ body {
 
     /* Фон изображения и оверлей остаются */
     background: var(--black);
-    background-image: url('images/123123.jpg'); 
+    background-image: url('img/123123.jpg'); 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
