@@ -9,7 +9,7 @@ const miceProducts = [
         brand: "LAMZU",
         price: "299 $",
         badge: "НОВИНКА",
-        image: "images/orig (1).webp", 
+        image: "img/orig (1).webp", 
         features: [
             "LIGHTWEIGHT DESIGN - 54g",
             "NORDIC 52848 PIXART PRW3395",
@@ -25,7 +25,7 @@ const miceProducts = [
         brand: "RAZER",
         price: "199 $",
         badge: "ХИТ",
-        image: "images/i.webp", 
+        image: "img/i.webp", 
         features: [
             "HYPERSPEED WIRELESS",
             "FOCUS PRO 30K OPTICAL SENSOR",
@@ -41,7 +41,7 @@ const miceProducts = [
         brand: "LOGITECH",
         price: "299 $",
         badge: "ВЫБОР ПРО",
-        image: "images/7358181630.jpg", 
+        image: "img/7358181630.jpg", 
         features: [
             "LIGHTSPEED WIRELESS",
             "HERO SENSOR 25600 DPI",
@@ -57,7 +57,7 @@ const miceProducts = [
         brand: "RAZER",
         price: "299 $",
         badge: "ПРЕМИУМ",
-        image: "images/6692984146.jpg", 
+        image: "img/6692984146.jpg", 
         features: [
             "MAGNESIUM ALLOY CHASSIS",
             "ULTRA-LIGHTWEIGHT - 49g",
@@ -74,7 +74,7 @@ const miceProducts = [
         price: "100 $", 
         badge: "УЛЬТРАЛЁГКИЙ",
         // Используем одну из предоставленных картинок в качестве заглушки
-        image: "images/GlassPad-SP-004-White-Image1.webp",
+        image: "img/GlassPad-SP-004-White-Image1.webp",
         features: [
             "LIGHTSPEED WIRELESS",
             "HERO SENSOR 25600 DPI",
@@ -110,7 +110,7 @@ const padsProducts = [
         brand: "WALLHACK",
         price: "100 $", 
         badge: "СТЕКЛО",
-        image: "images/GlassPad-SP-004-White-Image1.webp", 
+        image: "img/GlassPad-SP-004-White-Image1.webp", 
         features: [
             "GLASS SURFACE (SPEED)",
             "ULTRA-SMOOTH GLIDING", 
@@ -126,7 +126,7 @@ const padsProducts = [
         brand: "WALLHACK",
         price: "100 $",
         badge: "ТКАНЬ",
-        image: "images/ClothPad-SY-001-Image1.webp", 
+        image: "img/ClothPad-SY-001-Image1.webp", 
         features: [
             "CLOTH SURFACE (CONTROL)",
             "PERFECT CONTROL AND CONSISTENCY", 
@@ -142,7 +142,7 @@ const padsProducts = [
         brand: "WALLHACK",
         price: "100 $",
         badge: "АРТ",
-        image: "images/2048x2048_WEB_PRODUCT-IMG-GlassPad-SP-005-Awakening-Image1.webp", 
+        image: "img/2048x2048_WEB_PRODUCT-IMG-GlassPad-SP-005-Awakening-Image1.webp", 
         features: [
             "PREMIUM GLASS SURFACE",
             "ЭКСКЛЮЗИВНЫЙ АРТ ДИЗАЙН",
@@ -158,7 +158,7 @@ const padsProducts = [
         brand: "WALLHACK",
         price: "100 $",
         badge: "ARCADЕ",
-        image: "images/ClothPad-MO-001-Arcade-Twins-Image1.webp", 
+        image: "img/ClothPad-MO-001-Arcade-Twins-Image1.webp", 
         features: [
             "CLOTH SURFACE (SPEED/CONTROL)",
             "СТИЛЬНЫЙ АРКАДНЫЙ ДИЗАЙН",
@@ -174,7 +174,7 @@ const padsProducts = [
         brand: "WALLHACK",
         price: "100 $",
         badge: "ПРО",
-        image: "images/2048x2048_WEB_PRODUCT-IMG-GlassPad-SP-004A-Black-Image1.webp", 
+        image: "img/2048x2048_WEB_PRODUCT-IMG-GlassPad-SP-004A-Black-Image1.webp", 
         features: [
             "ЧЕРНАЯ СТЕКЛЯННАЯ ПОВЕРХНОСТЬ",
             "ULTRA-SMOOTH", 
@@ -190,7 +190,7 @@ const padsProducts = [
         brand: "WALLHACK",
         price: "80 $",
         badge: "НОВИНКА",
-        image: "images/2048x2048_WEB_PRODUCT-IMG-GlassPad-SP-004A-White-Image1.webp", 
+        image: "img/2048x2048_WEB_PRODUCT-IMG-GlassPad-SP-004A-White-Image1.webp", 
         features: [
             "БЕЛАЯ СТЕКЛЯННАЯ ПОВЕРХНОСТЬ",
             "OPTIMIZED FOR SPEED", 
