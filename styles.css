@@ -1,0 +1,772 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray-dark: #000000;
+    --gray-medium: #333333;
+    --gray-light: #585858;
+    --gray-lighter: #646464;
+    /* Монохромный акцентный цвет - белый */
+    --accent-color: var(--white); 
+    /* Монохромное свечение - полупрозрачный белый */
+    --glow-color: rgba(255, 255, 255, 0.3); 
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* Используем почти черный фон для шапки */
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gray-medium);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--white);
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 1.8rem;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Акцентный цвет на hover теперь белый */
+.nav-link:hover {
+    color: var(--accent-color); 
+}
+
+/* Активный элемент навигации теперь с белым подчеркиванием */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color); 
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cart, .phone {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.cart {
+    position: relative;
+}
+
+/* Изменение: счетчик корзины теперь черный текст на белом фоне */
+.cart-count {
+    background: var(--accent-color); 
+    color: var(--black); /* ИЗМЕНЕНИЕ: черный текст */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Герой секция */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 80px;
+
+    /* Фон изображения и оверлей остаются */
+    background: var(--black);
+    background-image: url('images/123123.jpg'); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 3; 
+}
+
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2; 
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    color: var(--gray-lighter);
+}
+
+/* Плавающие элементы (остаются монохромными) */
+.floating-element {
+    position: absolute;
+    filter: grayscale(100%) brightness(1.2);
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+.element-1 {
+    top: 20%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+    background: conic-gradient(from 0deg, white, gray, white);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    animation-delay: 0s;
+}
+
+.element-2 {
+    top: 60%;
+    right: 15%;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, white, gray);
+    border-radius: 50%;
+    animation-delay: 2s;
+}
+
+.element-3 {
+    bottom: 30%;
+    left: 20%;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, white, gray);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+/* Кнопка CTA - Главный призыв к действию */
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    /* ИЗМЕНЕНИЕ: Белый фон */
+    background: var(--accent-color); 
+    /* ИЗМЕНЕНИЕ: Черный текст */
+    color: var(--black); 
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    /* ИЗМЕНЕНИЕ: Белая рамка */
+    border: 2px solid var(--accent-color);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    /* ИЗМЕНЕНИЕ: Свечение белым */
+    box-shadow: 0 10px 30px var(--glow-color); 
+    /* ИЗМЕНЕНИЕ: Прозрачный фон при наведении */
+    background: transparent;
+    /* ИЗМЕНЕНИЕ: Белый текст при наведении */
+    color: var(--accent-color);
+}
+
+.animated-text-container {
+    margin: 2rem 0;
+}
+
+.text-xl {
+    font-size: 2.5rem;
+    color: currentColor;
+    letter-spacing: 0.06em;
+    font-weight: bold;
+}
+
+.char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px) rotate(-180deg);
+}
+
+/* --- СЕКЦИЯ ОСОБЕННОСТЕЙ (.features) - НОВЫЙ ДИЗАЙН --- */
+.features {
+    /* Фон секции остается темным */
+    padding: 100px 0;
+    background: var(--gray-dark);
+}
+
+.features-grid {
+    display: grid;
+    /* Увеличение минимального размера карточки для более премиального вида */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem; /* Увеличенный отступ между карточками */
+    justify-content: center;
+}
+
+.feature {
+    text-align: left; 
+    padding: 30px; 
+    background: var(--black); /* Карточка на более темном фоне для контраста */
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid var(--gray-medium); /* Едва заметная рамка */
+}
+
+/* Эффект при наведении на карточку */
+.feature:hover {
+    transform: translateY(-8px); /* Легкий подъем */
+    border-color: var(--accent-color); /* Акцентная рамка (белая) */
+    box-shadow: 0 15px 40px var(--glow-color); /* Свечение (полупрозрачный белый) */
+}
+
+/* --- ГЕОМЕТРИЧЕСКИЙ ФОН ВНУТРИ КАРТОЧКИ (ЭФФЕКТ СВЕЧЕНИЯ) --- */
+.feature::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: var(--glow-color); 
+    opacity: 0.05; /* Очень слабый эффект */
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.feature:hover::before {
+    opacity: 0.1; /* Усиление эффекта при наведении */
+    transform: rotate(60deg) scale(1.1);
+}
+
+/* --- ЭЛЕМЕНТЫ ОСОБЕННОСТИ --- */
+
+/* Контейнер для иконки и заголовка */
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2; /* Поверх фонового эффекта */
+}
+
+/* Иконка - теперь крупнее и с небольшим теневым эффектом */
+.feature i {
+    font-size: 2.5rem; 
+    margin-bottom: 0;
+    color: var(--accent-color); 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Легкое свечение для иконки */
+}
+
+/* Заголовок */
+.feature h3 {
+    font-size: 1.6rem; 
+    margin-bottom: 0;
+    color: var(--white);
+    font-weight: 700; /* Более жирный заголовок */
+}
+
+/* Описание */
+.feature p {
+    color: var(--gray-lighter);
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+
+.products-section {
+    padding: 80px 0;
+    background: var(--black);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.section-header p {
+    color: var(--gray-lighter);
+    font-size: 1.2rem;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.tab {
+    background: var(--gray-medium);
+    color: var(--white);
+    border: 2px solid var(--gray-medium);
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Активная вкладка - черный текст на белом фоне */
+.tab.active {
+    background: var(--accent-color); 
+    color: var(--black); /* ИЗМЕНЕНИЕ: черный текст */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--glow-color); 
+    border-color: var(--accent-color);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    display: none;
+}
+
+.products-grid.active {
+    display: grid;
+}
+
+.product-card {
+    background: var(--gray-dark);
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    border: 1px solid var(--gray-medium);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Рамка при наведении теперь белая */
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color); 
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    background: var(--gray-medium);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+}
+
+.product-img-actual {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    padding: 1rem; 
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img-actual {
+    transform: scale(1.05) rotate(-1deg); 
+}
+
+
+.product-brand {
+    color: var(--gray-lighter);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-weight: bold;
+}
+
+.product-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.product-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    flex: 1;
+}
+
+.product-features li {
+    padding: 0.3rem 0;
+    color: var(--gray-lighter);
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Маркеры списка теперь белые */
+.product-features li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color); 
+}
+
+/* Кнопка "Добавить в корзину" - Черный текст на белом фоне, при наведении наоборот */
+.add-to-cart {
+    background: var(--accent-color); 
+    color: var(--black);
+    border: 2px solid var(--accent-color);
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    width: 100%;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+    /* ФИКС ВЫСОТЫ КНОПОК */
+    height: 50px;
+    min-height: 50px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+.add-to-cart:hover {
+    background: transparent;
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Бейджик - Черный текст на белом фоне */
+.product-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--accent-color); 
+    color: var(--black); /* ИЗМЕНЕНИЕ: черный текст */
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* --- ОБНОВЛЕННЫЕ СЕКЦИИ ГАРАНТИИ И ДОСТАВКИ (Стиль карточек) --- */
+
+.guarantee-section,
+.delivery-section {
+    /* Фон секции остается темным */
+    padding: 100px 0; /* Увеличенный отступ */
+    background: var(--gray-dark);
+}
+
+/* Сетка контента */
+.guarantee-content,
+.delivery-content {
+    display: grid;
+    /* Увеличение минимального размера карточки для более премиального вида */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem; /* Увеличенный отступ между карточками */
+    margin-top: 3rem;
+}
+
+/* Стиль карточек (аналогично .feature) */
+.guarantee-item,
+.delivery-item {
+    text-align: left; /* Выравнивание влево */
+    padding: 30px; 
+    background: var(--black); 
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid var(--gray-medium); /* Едва заметная рамка */
+}
+
+/* Эффект при наведении на карточку */
+.guarantee-item:hover,
+.delivery-item:hover {
+    transform: translateY(-8px); /* Легкий подъем */
+    border-color: var(--accent-color); /* Акцентная рамка (белая) */
+    box-shadow: 0 15px 40px var(--glow-color); /* Свечение (полупрозрачный белый) */
+}
+
+/* --- ГЕОМЕТРИЧЕСКИЙ ФОН ВНУТРИ КАРТОЧКИ (ЭФФЕКТ СВЕЧЕНИЯ) --- */
+.guarantee-item::before,
+.delivery-item::before {
+    content: '';
+    position: absolute;
+    bottom: -50px; 
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: var(--glow-color); 
+    opacity: 0.05; 
+    transform: rotate(-45deg); 
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.guarantee-item:hover::before,
+.delivery-item:hover::before {
+    opacity: 0.1; 
+    transform: rotate(-60deg) scale(1.1);
+}
+
+/* Иконки и текст внутри карточек */
+
+/* Иконки - крупнее и с свечением */
+.guarantee-item i,
+.delivery-item i {
+    font-size: 2.5rem; /* Крупнее, чем было */
+    margin-bottom: 1.5rem; /* Отступ снизу */
+    color: var(--accent-color); 
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Легкое свечение */
+    position: relative;
+    z-index: 2;
+}
+
+.guarantee-item h3,
+.delivery-item h3 {
+    font-size: 1.6rem; /* Крупнее заголовки */
+    margin-bottom: 1rem;
+    color: var(--white);
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.guarantee-item p,
+.delivery-item p {
+    color: var(--gray-lighter);
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+/* Заголовок секции по центру */
+.section-header-centered {
+    text-align: center;
+    margin-bottom: 3.5rem; /* Увеличенный отступ снизу */
+}
+
+.section-header-centered h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.section-header-centered p {
+    color: var(--gray-lighter);
+    font-size: 1.2rem;
+}
+
+
+.footer {
+    background: var(--black);
+    padding: 60px 0 20px;
+    border-top: 1px solid var(--gray-medium);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    color: var(--gray-lighter);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-medium);
+    color: var(--gray-lighter);
+}
+
+/* Адаптивность остается без изменений */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+        transform: translate3d(0,-8px,0);
+    }
+    70% {
+        transform: translate3d(0,-4px,0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.bounce { animation: bounce 1s; }
+.pulse { animation: pulse 0.5s; }
+.shake { animation: shake 0.5s; }
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav {
+        gap: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .text-xl {
+        font-size: 1.8rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Адаптация для карточек гарантии/доставки на мобильных */
+    .guarantee-content,
+    .delivery-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}

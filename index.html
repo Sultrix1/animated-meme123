@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LETHALITY - PRO GAMING GEAR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>LETHALITY</h1>
+            </div>
+            <nav class="nav">
+                <a href="#hero" class="nav-link active">Главная</a>
+                <a href="#products" class="nav-link">Продукты</a>
+                <a href="#guarantee" class="nav-link">Гарантия</a>
+                <a href="#delivery" class="nav-link">Доставка</a>
+                <a href="#footer" class="nav-link">Контакты</a>
+            </nav>
+            <div class="header-actions">
+                <div class="cart">
+                    <i class="fas fa-shopping-cart fa-lg"></i>
+                    Корзина
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="floating-elements">
+                <div class="floating-element element-1"></div>
+                <div class="floating-element element-2"></div>
+                <div class="floating-element element-3"></div>
+            </div>
+            <h1 id="animatedText" class="text-xl">LETHALITY | GLIDE EDITION</h1>
+            <p>Ваше преимущество в игре. Ультралегкие мыши и стеклянные пады.</p>
+            <a href="#products" class="cta-button">Смотреть продукты <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                
+                <div class="feature">
+                    <div class="feature-header">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Максимальная скорость</h3>
+                    </div>
+                    <p>Наши продукты разработаны для минимальной задержки и максимального отклика.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-header">
+                        <i class="fas fa-weight-light"></i>
+                        <h3>Ультралегкий вес</h3>
+                    </div>
+                    <p>Мыши с весом менее 60 грамм для невероятной маневренности.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-header">
+                        <i class="fas fa-star"></i>
+                        <h3>Премиум материалы</h3>
+                    </div>
+                    <p>Используем только PTFE, магниевый сплав и закаленное стекло.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Наши продукты</h2>
+                <p>Выберите свое идеальное оружие для победы.</p>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active" data-category="mice"><i class="fas fa-mouse"></i> Игровые мыши</div>
+                <div class="tab" data-category="pads"><i class="fas fa-border-all"></i> Игровые ковры</div>
+            </div>
+
+            <div class="products-grid active" id="mice-products">
+                <div class="product-card" data-aos="fade-up">
+                    <div class="product-badge">НОВИНКА</div>
+                    <div class="product-image">
+                        <img src="images/mouse-1.png" alt="Игровая мышь LETHALITY" class="product-img-actual">
+                    </div>
+                    <div class="product-brand">LETHALITY</div>
+                    <div class="product-title">PRO MOUSE GLIDE</div>
+                    <div class="product-price">12,990 $</div>
+                    <ul class="product-features">
+                        <li>Вес 58 грамм</li>
+                        <li>Сенсор 26K DPI</li>
+                        <li>Оптические переключатели</li>
+                    </ul>
+                    <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+
+            <div class="products-grid" id="pads-products">
+                <div class="product-card" data-aos="fade-up">
+                    <div class="product-badge">СТЕКЛО</div>
+                    <div class="product-image">
+                        <img src="images/pad-1.png" alt="Стеклянный коврик LETHALITY" class="product-img-actual">
+                    </div>
+                    <div class="product-brand">LETHALITY</div>
+                    <div class="product-title">GLASS PAD ULTRA</div>
+                    <div class="product-price">7,990 $</div>
+                    <ul class="product-features">
+                        <li>Закаленное стекло</li>
+                        <li>Идеальное скольжение</li>
+                        <li>Нестираемая поверхность</li>
+                    </ul>
+                    <button class="add-to-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guarantee-section" id="guarantee">
+        <div class="container">
+            <div class="section-header-centered">
+                <h2>Наши гарантии и сервис</h2>
+                <p>Мы полностью уверены в качестве нашей продукции.</p>
+            </div>
+            <div class="guarantee-content">
+                <div class="guarantee-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Расширенная гарантия 2 года</h3>
+                    <p>Предоставляем увеличенный срок гарантийного обслуживания на все устройства WALLHACK.</p>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>30 дней на возврат</h3>
+                    <p>Возможность возврата товара, если он вам не подошел, без лишних вопросов.</p>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-tools"></i>
+                    <h3>Профессиональный ремонт</h3>
+                    <p>Собственный сервисный центр для быстрого и качественного послегарантийного ремонта.</p>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>Круглосуточная поддержка</h3>
+                    <p>Наша техническая поддержка готова помочь вам 24/7 по любым вопросам.</p>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-microscope"></i>
+                    <h3>Двойная проверка качества</h3>
+                    <p>Каждое устройство проходит тщательное тестирование перед отправкой клиенту.</p>
+                </div>
+                <div class="guarantee-item">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Бесплатное обновление ПО</h3>
+                    <p>Постоянные улучшения прошивок для лучшей производительности и новых функций.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="delivery-section" id="delivery">
+        <div class="container">
+            <div class="section-header-centered">
+                <h2>Доставка и оплата</h2>
+                <p>Быстрая и надежная доставка в любую точку мира.</p>
+            </div>
+            <div class="delivery-content">
+                <div class="delivery-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Экспресс-доставка</h3>
+                    <p>Получите заказ уже на следующий день в крупных городах.</p>
+                </div>
+                <div class="delivery-item">
+                    <i class="fas fa-truck-loading"></i>
+                    <h3>Бесплатная доставка</h3>
+                    <p>При заказе свыше 15,000 $ доставка осуществляется за наш счет.</p>
+                </div>
+                <div class="delivery-item">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>География доставки</h3>
+                    <p>Доставляем наши продукты по всему СНГ и миру с надежными партнерами.</p>
+                </div>
+                <div class="delivery-item">
+                    <i class="fas fa-redo-alt"></i>
+                    <h3>Гарантия обмена</h3>
+                    <p>Простой обмен или возврат товара в течение 30 дней после покупки.</p>
+                </div>
+                <div class="delivery-item">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Удобная оплата</h3>
+                    <p>Принимаем все виды карт, электронные кошельки и оплату при получении.</p>
+                </div>
+                <div class="delivery-item">
+                    <i class="fas fa-box-open"></i>
+                    <h3>Надежная упаковка</h3>
+                    <p>Мы используем усиленную упаковку для 100% сохранности вашего заказа при транспортировке.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LETHALITY</h3>
+                    <p>Профессиональное игровое оборудование.</p>
+                    <p>Ваше преимущество в каждом клике.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навигация</h4>
+                    <p><a href="#products" class="nav-link">Мыши</a></p>
+                    <p><a href="#products" class="nav-link">Ковры</a></p>
+                    <p><a href="#guarantee" class="nav-link">Сервис</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-envelope"></i> info@lethality.gg</p>
+                    <p><i class="fas fa-phone"></i> +7 (707)77-77-77</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Следите за нами</h4>
+                    <p><i class="fab fa-vk"></i> Vk</p>
+                    <p><i class="fab fa-telegram"></i> Telegram</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 LETHALITY. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
